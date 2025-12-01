@@ -8,20 +8,19 @@ def solution_uno_uno(file):
   dial = 50
   with open(file, "r") as f:
     for line in f:
+      rotation = int(line[1:-1]) % 100
       if line[0] == "L":
-        moves.append(-1*int(line[1:-1]))
+        moves.append(-1*rotation)
       else:
-        moves.append(int(line[1:-1]))
+        moves.append(rotation)
 
   for move in moves:
+  
     dial = dial + move
-    if dial > 99:
+    if abs(dial) >= 100:
       dial = dial % 100
-    elif dial < -99:
-      dial = dial % -100
     if dial == 0:
       counter+=1
-
   return counter
 
 if __name__ == "__main__":
