@@ -5,7 +5,7 @@
 def solution_uno_uno(file):
   counter = 0
   moves = []
-  dial= 50
+  dial = 50
   with open(file, "r") as f:
     for line in f:
       if line[0] == "L":
@@ -24,4 +24,6 @@ def solution_uno_uno(file):
 
   return counter
 
-print(solution_uno_uno("real-input.txt"))
+if __name__ == "__main__":
+  print(solution_uno_uno("real-input.txt"))
+
