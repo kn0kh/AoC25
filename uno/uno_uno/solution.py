@@ -8,7 +8,7 @@ def solution_uno_uno(file):
   dial = 50
   with open(file, "r") as f:
     for line in f:
-      rotation = int(line[1:-1]) % 100
+      rotation = int(line[1:-1])
       if line[0] == "L":
         moves.append(-1*rotation)
       else:
