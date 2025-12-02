@@ -4,24 +4,23 @@
 
 def solution_uno_uno(file):
   counter = 0
-  moves = []
-  dial = 50
+  position = 50
+
   with open(file, "r") as f:
     for line in f:
-      rotation = int(line[1:-1])
-      if line[0] == "L":
-        moves.append(-1*rotation)
-      else:
-        moves.append(rotation)
+      # Parse data from the input file
+      line = line.replace("L", "-").replace("R", "").replace("\n", "")
+      move = int(line)
 
-  for move in moves:
-    dial = dial + move
-    if dial >= 100 or dial <= -100:
-      dial = dial % 100
-    if dial == 0:
-      counter+=1
-  return counter
+      # Get new dial position
+      position = (position + move) % 100
+
+      # Check if dial is on zero
+      if position == 0:
+        counter += 1
+      
+    return counter
 
 if __name__ == "__main__":
-  print(solution_uno_uno("test-input.txt"))
+  print(f"Solution: {solution_uno_uno("real-input.txt")}")
 
