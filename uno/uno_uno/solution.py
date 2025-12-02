@@ -15,14 +15,13 @@ def solution_uno_uno(file):
         moves.append(rotation)
 
   for move in moves:
-  
     dial = dial + move
-    if abs(dial) >= 100:
+    if dial >= 100 or dial <= -100:
       dial = dial % 100
     if dial == 0:
       counter+=1
   return counter
 
 if __name__ == "__main__":
-  print(solution_uno_uno("real-input.txt"))
+  print(solution_uno_uno("test-input.txt"))
 
