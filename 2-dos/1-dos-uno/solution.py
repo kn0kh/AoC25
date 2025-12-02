@@ -6,23 +6,22 @@ def solution(file):
   with open(file, "r") as f:
 
     # Parse the data
-    data = f.read()
-    raw_ranges = data.split(",")
+    data = f.read().split(",")
 
-    # Get the ranges
-    for r in raw_ranges:
-      ran = r.split("-")
-      start,end = ran[0], ran[1]
-      
-      # Get the ID's
-      for i in range(int(start), int(end)+1):
-        str_i = str(i)
+  # Get the ranges
+  for id_range in data:
+    r = id_range.split("-")
+    start,end = int(r[0]), int(r[1])
+    
+    # Get the ID's
+    for i in range(start, end+1):
+      str_i = str(i)
 
-        # If the length of ID and sum of digits are even
-        if len(str_i) % 2 == 0 and sum(map(int, str_i)) % 2 == 0:
-          # Split the id in half and check if two halfs are the same
-          if str_i[:(len(str_i)//2)] == str_i[(len(str_i)//2):]:
-              counter += i
+      # If the length of ID and sum of digits are even
+      if len(str_i) % 2 == 0 and sum(map(int, str_i)) % 2 == 0:
+        # Split the id in half and check if two halfs are the same
+        if str_i[:(len(str_i)//2)] == str_i[(len(str_i)//2):]:
+            counter += i
 
   return counter
 
