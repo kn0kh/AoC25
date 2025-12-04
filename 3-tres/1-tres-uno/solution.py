@@ -5,10 +5,10 @@ def solution(file):
   joltage = 0
   with open(file, 'r') as f:
     for line in f:
-      line = line.replace("\n", "")
-      first_biggest = max(line[:-1])
-      first_biggest_index = line.index(first_biggest)
-      second_biggest = max(line[first_biggest_index+1:])
+      bank = line.replace("\n", "")
+      first_biggest = max(bank[:-1])
+      first_biggest_index = bank.index(first_biggest)
+      second_biggest = max(bank[first_biggest_index+1:])
       joltage += int(first_biggest + second_biggest)
   return joltage
 
