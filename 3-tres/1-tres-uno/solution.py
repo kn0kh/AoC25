@@ -3,13 +3,16 @@
 
 def solution(file):
   joltage = 0
+
   with open(file, 'r') as f:
     for line in f:
       bank = line.replace("\n", "")
-      first_biggest = max(bank[:-1])
-      first_biggest_index = bank.index(first_biggest)
-      second_biggest = max(bank[first_biggest_index+1:])
-      joltage += int(first_biggest + second_biggest)
+
+      first_digit = max(bank[:-1])
+      second_digit = max(bank[bank.index(first_digit)+1:])
+
+      joltage += int(first_digit + second_digit)
+
   return joltage
 
 if "__main__" == __name__:
