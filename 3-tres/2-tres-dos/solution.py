@@ -14,11 +14,10 @@ def solution(file):
 
         if i == 0:
           sample_biggest = max(bank[j:])
-          j += bank[j:].index(sample_biggest) + 1
         else:
           sample_biggest = max(bank[j:i])
-          j += bank[j:i].index(sample_biggest) + 1
-
+          
+        j += bank[j:].index(sample_biggest) + 1
         bank_joltage.append(sample_biggest)
       joltage += int(''.join(bank_joltage))
        
