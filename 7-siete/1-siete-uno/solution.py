@@ -14,8 +14,8 @@ def solution(file):
           if (j, i-1) in tachyon_pos:
             if l == "^":
               counter += 1
-              tachyon_pos.add((j-1, i+1))
-              tachyon_pos.add((j+1, i+1))
+              tachyon_pos.add((j-1, i))
+              tachyon_pos.add((j+1, i))
             else:
               tachyon_pos.add((j, i))
 
