@@ -12,8 +12,7 @@ def solution(file):
       for c in coordinates[i:]:
         areas.append(abs(coordinate[0]-c[0]+1)*abs(coordinate[1]-c[1]+1))
 
-  areas.sort(reverse=True)
-  return areas[0]
+  return max(areas)
 
 
 if "__main__" == __name__:
