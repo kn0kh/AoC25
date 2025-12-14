@@ -3,7 +3,6 @@
 
 from functools import cache
 
-@cache
 def solution(file):
   paths = 0
   with open(file, 'r') as f:
