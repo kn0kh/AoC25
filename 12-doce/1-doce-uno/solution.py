@@ -16,8 +16,7 @@ def solution(file):
       elif "x" in line:
         i_colon = line.index(":")
         raw_area = line[:i_colon].replace("x", "*")
-        place_data = {"area": eval(raw_area), "presents": line[i_colon+1:].strip().split(" ")}
-        places.append(place_data)
+        places.append({"area": eval(raw_area), "presents": line[i_colon+1:].strip().split(" ")})
 
   # check areas
   for place in places:
@@ -26,10 +25,9 @@ def solution(file):
 
     if pure_area <= has:
       count += 1
-
-      
-
+  # It worked??
   return count
+
 
 if __name__ == "__main__":
   print(f"Solution: {solution("real-input.txt")}")
